@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    <div class="all-cards">
+            <div class="card">
+                <img class="card-img" src="{{ product.image }}" alt="Card image cap">
+                <h3 class="card-title">{{ product.name }}</h3>
+                <div class="texts">
+                    <p class="card-text">Stock : {{ product.stock }}</p>
+                    <p class="card-text">Prix : {{ product.price }} €</p>
+                </div>
+                <a href="edit" class="btn btn-primary">Modifier</a>
+            </div>
+    </div>
+</body>
+</html>

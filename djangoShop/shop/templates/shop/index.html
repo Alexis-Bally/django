@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    <div class="container">
+        <a href="create" class="create-btn">Créer un produit</a>
+        <div class="all-cards">
+            {% for product in products %}
+                <div class="card">
+                    <a class="link-card-img" href="{{ product.id }}/"><img class="card-img" src="{{ product.image }}" alt="Card image cap"></a>
+                    <h3 class="card-title">{{ product.name }}</h3>
+                    <div class="texts">
+                        <p class="card-text">Stock : {{ product.stock }}</p>
+                        <p class="card-text">Prix : {{ product.price }} €</p>
+                    </div>
+                    <a href="edit/{{ product.id }}" class="btn btn-primary">Modifier</a>
+                    <a href="delete/{{ product.id }}" class="btn btn-primary">Supprimer</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
